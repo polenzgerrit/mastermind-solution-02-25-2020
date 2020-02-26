@@ -1,17 +1,23 @@
-#Not my code
+#!/usr/bin/env python
 
-import requests, json, sys
-email = 'polenz.gerrit@gmail.com'
-r = requests.post('https://mastermind.praetorian.com/api-auth-token/', data={'email':email})
-r.json()
-# > {'Auth-Token': 'AUTH_TOKEN'}
-headers = r.json()
-headers['Content-Type'] = 'application/json'
+#Solves the Praetorian challenge "Mastermind" and outputs my hash into hash.txt
 
-#This is my code
-
-import itertools, random
+import requests, json, sys, itertools, random
 import numpy as np
+
+__author__ = 'Gerrit Bryan'
+__licence__ = 'MIT'
+email = 'polenz.gerrit@gmail.com'
+__email__ = email
+
+
+#VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV|
+#Written by Praetorian 																		#|															#|														#|
+r = requests.post('https://mastermind.praetorian.com/api-auth-token/', data={'email':email})#|
+r.json()																					#|
+headers = r.json()																			#|	
+headers['Content-Type'] = 'application/json'												#|
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #This holds all of the information given to me and has one external method and one internal method
 class Game:
